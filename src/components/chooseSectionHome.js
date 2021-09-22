@@ -7,16 +7,16 @@ export default function ChooseSectionHome() {
             <h2 className="text-center my-5">Pourquoi choisir juridique.tn ?</h2>
             <Container>
             <Row>
-                <Col>
+                <Col md={6} xs={12}>
                 <img
                 className="d-block w-100 "
                 src={choose}
                 alt="First slide"
-     
+                  style={{borderRadius:'15px'}}
                 />
                 </Col>
-                <Col>
-                <h5><span><i class="fas fa-comment-dots"></i></span>Nous sommes professionnels</h5>
+                <Col md={6} xs={12}>
+                <h5 className="mt-4"><span><i class="fas fa-comment-dots"></i></span>Nous sommes professionnels</h5>
                 <p>Nous ressource, formons, parlons, encadrons et encourageons; les leaders du marché, les propriétaires d'entreprise et les professionnels de carrière pour être efficaces sur le lieu de travail.</p>
                 <h5><span><i class="fas fa-palette"></i></span>Nous sommes créatifs</h5>
                 <p>Avec autant de facteurs à prendre en compte pour décider comment caractériser votre entreprise, ne serait-il pas formidable d'avoir à bord un groupe de personnes avant-gardistes et bien informées qui savent ce qu'elles font ?.</p>

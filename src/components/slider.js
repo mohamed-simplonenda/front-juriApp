@@ -20,7 +20,7 @@ export default function Slider() {
     <Carousel.Caption>
     <div className="slider">
       <h3>Consultants experts</h3>
-      <p>Plus de 2 ans d'expérience à aider les clients à trouver des solutions complètes</p>
+      <p>Plus de 2 ans d'expérience à <br/>aider les clients à trouver des solutions complètes</p>
       </div>
     </Carousel.Caption>
     
@@ -34,8 +34,8 @@ export default function Slider() {
 
     <Carousel.Caption>
     <div className="slider">
-      <h3>Consultants experts</h3>
-      <p>Plus de 2 ans d'expérience à aider les clients à trouver des solutions complètes</p>
+    <h3>Partenaires de croissance</h3>
+      <p>Connectez-vous avec les meilleurs  <br/>consultants triés sur le volet par Juridique.tn.</p>
       </div>
     </Carousel.Caption>
   </Carousel.Item>
@@ -48,8 +48,8 @@ export default function Slider() {
 
      <Carousel.Caption>
       <div className="slider">
-        <h3>Consultants experts</h3>
-        <p>Plus de 2 ans d'expérience à aider les clients à trouver des solutions complètes</p>
+      <h3>Consultants experts</h3>
+      <p>Plus de 2 ans d'expérience à <br/>aider les clients à trouver des solutions complètes</p>
       </div>
     </Carousel.Caption>
   </Carousel.Item>

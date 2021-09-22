@@ -3,6 +3,7 @@ import {addPub,deleteItems} from '../request'
 
 
 
+// get all publication
 
 export const getPub=()=> async (dispatch)=> {
     try{
@@ -12,7 +13,7 @@ export const getPub=()=> async (dispatch)=> {
         payload:res.data 
 
     })
-    console.log('sara',res.data)
+    console.log('getPub',res.data)
     }
     catch (error) {
                   console.log(error);
@@ -20,11 +21,30 @@ export const getPub=()=> async (dispatch)=> {
     }
 
 
+// get  publication by id
+
+export const getPubById=(id)=> async (dispatch)=> {
+  try{
+  const res = await axios.get(`http://localhost:4000/app/publication/getPublicationById/${id}`)
+  dispatch({
+      type:"GET_PUBID_SUCCEDED",
+      payload:res.data 
+
+  })
+  console.log('getPubById',res.data)
+  }
+  catch (error)
+   {
+                console.log(error);
+               }
+  }
+
+
     // post publication
 
-    export const addNewPubs=(image,date,titre,texte,auteur )=> async (dispatch) =>{
+    export const addNewPubs=(image,date,titre,texte,auteur,imageExpert,description )=> async (dispatch) =>{
         try{
-            const res=await addPub (image,date,titre,texte,auteur);
+            const res=await addPub (image,date,titre,texte,auteur,imageExpert,description);
             dispatch ({
                 type:"POST_PUB_SUCCEDED",
                 payload:res.data
@@ -52,9 +72,10 @@ export const deleteProduct = (id)=> async (dispatch) => {
     }
   };
     // update Publication
-export const updateItem = (id,image,date,titre,texte,auteur ) => async dispatch => {
+export const updateItem = (id,image,date,titre,texte,auteur,imageExpert,description ) => async dispatch => {
   try {
-    const res = await axios.put(`http://localhost:4000/app/publication/${id}/updatePublication`,{image,date,titre,texte,auteur}).then(res=>  window.location.reload()) 
+    const res = await axios.put(`http://localhost:4000/app/publication/${id}/updatePublication`
+    ,{image,date,titre,texte,auteur}).then(res=>  window.location.reload()) 
      
     dispatch({
       type:  "UPDATE_PUB_SUCCEDED", 

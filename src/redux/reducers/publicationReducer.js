@@ -13,6 +13,13 @@ const initialState={
           datas: payload,
           loading: false
         };
+        case "GET_PUBID_SUCCEDED":
+        
+          return {
+            ...state,
+            datas: payload,
+            loading: false
+          };
   
         case "POST_PUB_SUCCEDED":
          return {

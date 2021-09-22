@@ -2,16 +2,25 @@
 const inisialState ={
     token:null,
     user:{
+        image:'',
         fullName:'',
+        email:'',
         phone:'',
-        email:''
+        description:'',
+        specialité:'',
+        status:'',
+        role:''
+
+
     },
     authenticate:false,
-    authenticating:false 
+    authenticating:false ,
+   
 }
 
  const authReducer = (state =inisialState,action)=>{
-  switch (action.type){
+    const { type, payload } = action;    
+  switch (type){
      case" LOGIN_FAILED":
         state = {
             ...state,
@@ -35,11 +44,12 @@ const inisialState ={
                         ...inisialState
                     }
                     break
+          
                     
            default:
         
         }
-
+        console.log(state,"stateExpert");
  return state
 };
 export default authReducer

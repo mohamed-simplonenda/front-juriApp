@@ -18,7 +18,7 @@ export default function TopBar() {
                 +216 22 386 557, +216 22 386 557
             </p>
             </Col>
-            <Col xs lg="2">
+            <Col xs lg="3">
             <p>
                 <span><i class="far fa-clock"></i></span>
                 Lun-Sam, 8.00-18.00. 

@@ -1,21 +1,25 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPub} from "../redux/actions/publicationAction"
-import{Card,Button} from 'react-bootstrap'
+import { getPubById} from "../redux/actions/publicationAction"
+import{Card,Button, Container ,Row,Col} from 'react-bootstrap'
+import {Menu} from './navbar'
+import Footer from './Footer'
+import TopBar from './topBar'
 
 
-export default function PlatList() {
+export default function PubById() {
 
      
-     const datas = useSelector(state => state.platReducer.datas)
-     const loading = useSelector(state => state.platReducer.loading)
+     const datas = useSelector(state => state.pubReducer.datas)
+     const loading = useSelector(state => state.pubReducer.loading)
+     const auth = useSelector(state => state.auth.user)
      const dispatch = useDispatch()
 
 
      useEffect(() => {
-        dispatch(getPub());
+        dispatch(getPubById( ));
       },[]);
-      console.log(datas, "did we ?");
+      console.log(datas, "pub by id");
 
     
   
@@ -23,30 +27,53 @@ export default function PlatList() {
 
 
     return (
-        <div>
-            {/* <h1 className="text-center">Liste des datas</h1> */}
+        <div >
+          <TopBar/>
+          <Menu/>
+     <Container>
+       <div className="mt-5">
+    <p className=" blog-auteur"> {datas.auteur},  {datas.date}</p>    
+    <p className="blog-titre">{datas.titre}</p><br/><br/>
+    <Row style={{ marginTop:'0rem' }}>
+      <Col md={8}>
 
-   <div className="d-flex desc text-center justify-content-between flex-wrap ">
-        {datas.map(el => (<div className="mb-5">
-          <Card style={{ width: '18rem' }}>
-  {/* <Card.Img variant="top" src={el.image} style={{ height: '16rem' }}/> */}
+      <Card className="card mb-5" >
+  <Card.Img variant="top" src={datas.image} style={{ height: '26rem' }}/>
   <Card.Body>
-    <Card.Title>{el.date}</Card.Title>
+    
    
-    <Card.Text>
-    {el.titre}<br/>
-    {el.texte}<br/>
-    {el.auteur}
+    <Card.Text >
+    <p className=" blog-p py-5 px-5"> {datas.texte}</p> 
+   
     </Card.Text>
-    <Button variant="primary">Lire la suite</Button>
+   
+
+ 
   </Card.Body>
 </Card>
-        
+    
+      </Col>
+      <Col ms={4}>
+      
+        <div className="card-auteur text-center ">
+        <img src={datas.imageExpert} className="rounded-circle w-50" />
+        <p className=" blog-titre mt-2"> {datas.auteur}</p>   
+        <p className=" blog-p mt-2"> {datas.description}</p> 
 
-          </div>
-        ))}
         </div>
+     
+      </Col>
+    </Row>
+ 
+   
 
+    
+  
+
+    </div>
+  
+    </Container>
+    <Footer/>
         </div>
     )
 }

@@ -10,7 +10,7 @@ export default function NosServices() {
             <Container>
                 <h2 className="text-center mb-5">Nos services</h2>
                 <Row>
-                    <Col>
+                     <Col md={6} xs={12}>
                             <img
                             className="d-block w-100 "
                             src={service1}
@@ -29,7 +29,7 @@ export default function NosServices() {
                     <h5>Service juridique.tn</h5>
                     <p>Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!</p>
                     </Col>
-                    <Col>
+                     <Col md={6} xs={12}>
                             <img
                             className="d-block w-100 "
                             src={service2}
@@ -39,7 +39,7 @@ export default function NosServices() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
+                     <Col md={6} xs={12}>
                             <img
                             className="d-block w-100 "
                             src={service3}

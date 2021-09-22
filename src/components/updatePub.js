@@ -19,7 +19,7 @@ const UpdateItem = ({el,id}) => {
         })
         console.log("input",update)
     }
-    // update Menu
+    // update pub
 
     const updatePub=()=>{
         dispatch (updateItem(id,update.image,update.date, update.titre,update.texte ,update.auteur)) 
@@ -30,14 +30,14 @@ const UpdateItem = ({el,id}) => {
 
   return(
     <div>
-    <div className='container mt-5'>
+    <div className=''>
     <button
 						type='button'
 						className='btn btn-success btn-sm'
                         onClick={handleShow} 
 					>
 						<i className='far fa-edit pr-3'></i>
-						Edit
+						
 					</button>
     
 
@@ -50,37 +50,61 @@ const UpdateItem = ({el,id}) => {
 <Form >
 <Form.Group controlId="formBasicEmail">
 <Form.Label>Image de votre produit</Form.Label>
-<Form.Control type="text" placeholder="image" name='image' defaultValue={el.image}  onChange={handleChange}/>
+<Form.Control 
+    type="text" 
+    placeholder="image" 
+    name='image' 
+    defaultValue={el.image}  
+    onChange={handleChange}/>
 
 </Form.Group>
 
 <Form.Group controlId="formBasicEmail">
-<Form.Label>date de votre produit</Form.Label>
-<Form.Control type="text" placeholder="title" name='date' defaultValue={el.date}  onChange={handleChange}/>
+<Form.Label>date de votre punlication</Form.Label>
+<Form.Control 
+type="text" 
+placeholder="title"  
+name='date' 
+defaultValue={el.date}  
+onChange={handleChange}/>
 
 </Form.Group>
 <Form.Group controlId="formBasicPassword">
 <Form.Label>titre</Form.Label>
-<Form.Control type="text" placeholder="enter year"  name='titre' defaultValue={el.titre}  onChange={handleChange}  />
+<Form.Control 
+type="text" 
+placeholder="enter year"  
+name='titre' 
+defaultValue={el.titre}  
+onChange={handleChange}  />
 </Form.Group>
 
 
 <Form.Group controlId="formBasicPassword">
 <Form.Label>texte</Form.Label>
-<Form.Control type="text" placeholder="enter image"  name='texte'  defaultValue={el.texte}   onChange={handleChange} />
+<Form.Control 
+type="text" 
+placeholder="enter image"  
+name='texte'  
+defaultValue={el.texte}   
+onChange={handleChange} />
 </Form.Group>
 
 
 
 <Form.Group controlId="formBasicPassword">
 <Form.Label>auteur</Form.Label>
-<Form.Control type="text" placeholder="enter description"  name="auteur"  defaultValue={el.auteur}  onChange={handleChange} />
+<Form.Control 
+type="text" 
+placeholder="enter description"  
+name="auteur"  
+defaultValue={el.auteur}  
+onChange={handleChange} />
 </Form.Group>
-<Button className="ms-3  mt-3" variant="secondary" onClick={handleClose}>  
-Close
-</Button>
 
-<Button onClick={updatePub} >valider</Button>
+<div className="d-flex justify-content-center mb-5">
+<Button className=" mt-4 w-75" variant="outline-primary" onClick={()=>{updatePub();handleClose()}}>valider</Button>
+</div>
 </Form>
 </Modal.Body>
 

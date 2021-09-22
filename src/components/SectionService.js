@@ -7,19 +7,19 @@ export default function SectionService() {
         <Container>
             <Row>
                 
-                <Col>
+                 <Col md={4} xs={12}>
                 <h5><span><i class="fas fa-comment-dots"></i></span>Nous sommes professionnels</h5>
-                <p>Nous ressource, formons, parlons, encadrons et encourageons; les leaders du marché, les propriétaires d'entreprise et les professionnels de carrière pour être efficaces sur le lieu de travail.</p>
+                <p>Nous ressource, formons, parlons, encadrons et encourageons; les leaders du marché.</p>
                 </Col>
 
-                <Col>
+                 <Col md={4} xs={12}>
                 <h5><span><i class="fas fa-palette"></i></span>Nous sommes créatifs</h5>
-                <p>Avec autant de facteurs à prendre en compte pour décider comment caractériser votre entreprise, ne serait-il pas formidable d'avoir à bord un groupe de personnes avant-gardistes et bien informées qui savent ce qu'elles font ?.</p>
+                <p>Avec autant de facteurs à prendre en compte pour décider comment caractériser votre entreprise.</p>
                 </Col>
 
-                <Col>
+                 <Col md={4} xs={12}>
                 <h5><span><i class="fas fa-clock"></i></span>24/7 Excellent support </h5>
-                <p>Concevez des stratégies marketing intelligentes et convaincantes, améliorez le positionnement des produits et augmentez les taux de conversion, Elixir est toujours disponible pour vous guider.</p>
+                <p>Concevez des stratégies marketing intelligentes et convaincantes, améliorez le positionnement des produits .</p>
                 </Col>
 
             </Row>

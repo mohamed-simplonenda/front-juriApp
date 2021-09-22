@@ -1,13 +1,16 @@
 import {fetchLogin} from "../request"
+import addExpert from "../request"
+import axios from 'axios'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
  
 
-export const login =(user)=> async(dispatch) =>{
+export const login =(user)=> {
     console.log(user)
+    return async(dispatch) =>{
     try{
         
        
-     const res =  await fetchLogin(user)
+     const res =  await axios.post(`http://localhost:4000/app/user/signin`,{...user})
             if (res.status === 200){
               
                 const {token,user} = res.data
@@ -38,7 +41,7 @@ export const login =(user)=> async(dispatch) =>{
     catch (error) {
               console.log(error);
              }
-}
+}}
 
 export const isUserLoggedIn = () =>{
     return async dispatch =>{
@@ -70,6 +73,36 @@ export const signout = () =>{
             type:'LOGOUT_REQUEST'
         })
     }
+};
+   // signup user
+
+   export const signup = (user) => {
+
+    console.log(user)
+
+    return async (dispatch) => {
+
+        dispatch({type: "USER_REGISTER_REQUEST"});
+        const res = await axios.post(`http://localhost:4000/app/user/register`, {
+            ...user
+        });
+
+        if(res.status === 201){
+            const { message } = res.data;
+            dispatch({
+                type: "USER_REGISTER_SUCCESS",
+                payload: {message}
+            });
+        }else{
+            if(res.status === 400){
+                dispatch({
+                    type: "USER_REGISTER_FAILURE",
+                    payload: { error: res.data.error }
+                });
+            }
+        }
+    }
 }
+
 
 

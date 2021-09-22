@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import { Menu } from '../components/navbar'
 import RechercheExpert from '../components/rechercheExpert'
 import TopBar from '../components/topBar'
+import Experts from '../components/expertCrud'
 
 export default function Expert() {
     return (
@@ -13,7 +14,8 @@ export default function Expert() {
                 <h1>Expert</h1>
                 <p>Accueill <span><i class="fas fa-angle-double-right mx-2"></i></span> Expert</p>
             </div>
-            <RechercheExpert/>
+            {/* <RechercheExpert/> */}
+            <Experts/>
             <Footer/>
             
         </div>
